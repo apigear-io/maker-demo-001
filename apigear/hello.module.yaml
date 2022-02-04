@@ -1,0 +1,34 @@
+schema: "apigear.module/1.0"
+name: hello
+version: "0.1"
+
+interfaces:
+  - name: EmptyWorld2
+    properties:
+      - name: value
+        type: int
+        description: a good value
+    operations:
+      - name: sayHello
+        params:
+          - name: msg
+            type: string
+        type: string
+  - name: Settings
+    properties:
+      - name: timeOut
+        type: float
+
+structs:
+  - name: Message
+    fields:
+      - name: payload
+        type: string
+
+enums:
+  - name: Orientation
+    members:
+      - name: North
+      - name: East
+      - name: West
+      - name: South

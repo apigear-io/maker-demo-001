@@ -1,0 +1,14 @@
+schema: "apigear.solution/1.0"
+name: demo
+version: "0.1"
+
+layers:
+  - name: demo layer
+    modules:
+      - hello.module.yaml
+    output: ../out
+    blueprint:
+      rules: ../tech-template/rules.yaml
+      package: ""
+      features: [core]
+      force: true

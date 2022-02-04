@@ -1,0 +1,10 @@
+version: "1.0"
+features:
+  core: # core feature
+    module: # per module
+      documents: # documents to transform
+        - source: core/api.h
+          target: "{{module}}/core/api.h"
+        - source: core/api.cpp
+          target: "{{module}}/core/api.cpp"
+          

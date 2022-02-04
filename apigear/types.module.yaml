@@ -1,0 +1,105 @@
+schema: "apigear.module/1.0"
+name: types
+version: "0.1"
+
+interfaces:
+  - name: SimpleTypes
+    properties:
+      - name: prop01
+        description: a boolean property
+        type: bool
+      - name: prop02
+        description: a string property
+        type: string
+      - name: prop03
+        description: a integer property
+        type: int
+      - name: prop04
+        description: a floating point property
+        type: float
+      - name: prop05
+        description: an boolean array property
+        type: array
+        items: bool
+      - name: prop06
+        description: an integer array property
+        type: array
+        items: int
+      - name: prop07
+        description: a floating point array property
+        type: array
+        items: float
+      - name: prop08
+        description: a string array property
+        type: array
+        items: string
+  - name: ComplexTypes
+    properties:
+      - name: prop01
+        description: a struct property
+        type: { ref: Struct01 }
+      - name: prop02
+        description: a struct array property
+        type: array
+        items: { ref: Struct01 }
+      - name: prop03
+        description: a enum property
+        type: { ref: Enum01 }
+      - name: prop04
+        description: a enum array property
+        type: array
+        items: { ref: Enum01 }
+
+structs:
+  - name: Struct01
+    description: a struct with simple fields
+    fields:
+      - name: field01
+        description: a boolean field
+        type: bool
+      - name: field02
+        description: a string field
+        type: string
+      - name: field03
+        description: an integer field
+        type: int
+      - name: field04
+        description: a floating point field
+        type: float
+      - name: field05
+        description: an boolean array field
+        type: array
+        items: bool
+      - name: field06
+        description: an integer array field
+        type: array
+        items: int
+      - name: field07
+        description: a floating point array field
+        type: array
+        items: float
+      - name: field08
+        description: a string array field
+        type: array
+        items: string
+  - name: Struct02
+    description: a struct with single-level nested fields
+    fields:
+      - name: field01
+        description: a struct field
+        type: { ref: Struct01 }
+  - name: Struct03
+    description: a struct with enumeration field
+    fields:
+      - name: field01
+        description: a enum field
+        type: { ref: Enum01 }
+enums:
+  - name: Enum01
+    members:
+      - name: Member01
+        description: the first member of the enum
+      - name: Member02
+        description: the second member of the enum
+      - name: Member03
+        description: the third member of the enum
